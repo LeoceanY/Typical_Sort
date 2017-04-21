@@ -11,13 +11,11 @@ class solution:
 #执行n遍，则所有元素都比较过了。
 	def bubble_sort_2(self,list_orig):
 		l = len(list_orig)
-		while l > 0:
-			#因为一次冒泡后，最大的数字肯定会沉到最底部，所以最后一个数字不用再交换了，l-1
-			for j in range(1,l):
-				if list_orig[j-1] > list_orig[j]:
-						list_orig[j-1],list_orig[j] = list_orig[j],list_orig[j-1]
+		for i in range(0,l):
+			for j in range(0,l-i-1):
+				if list_orig[j] > list_orig[j+1]:
+						list_orig[j],list_orig[j+1] = list_orig[j+1],list_orig[j]
 				print list_orig
-			l = l - 1
 			print "~~"
 			print list_orig
 
